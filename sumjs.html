@@ -1,0 +1,63 @@
+
+<!-- Create a web page to perform Sum operation using  JavaScript -->
+<html>
+<head></head>
+<body>
+<h3 >JavaScript Programming</h3>
+<hr/>
+First Number :  
+<input type="text" id="t1" />
+<br></br>
+Second Number :  
+<input type="text" id="t2"  />
+<br></br>
+<input type="button" id="b1" onclick="f1(event)"
+			value="Sum"  />	 	
+ </br>
+ <input type="button" id="b2" onclick="f1(event)"
+			value="Subtract"  />	 	
+ </br>
+ <input type="button" id="b3" onclick="f1(event)"
+			value="Multiply"  />	 	
+ </br>
+ <input type="button" id="b4" onclick="f1(event)"
+			value="Divide"  />	 	
+ </br>
+ 
+<p id="p1"></p>
+
+<script>
+	function  f1(event)
+	{
+        let Obj1 = document.getElementById("t1");
+        let Obj2 = document.getElementById("t2");
+        let pobj=document.getElementById("p1");
+        let FirstNumber = Obj1.value;
+        
+            let SecondNumber = Obj2.value;
+            let a=parseInt(FirstNumber);
+            let b=parseInt(SecondNumber);
+            let v=event.target.id 
+            if(v=="b1"){
+            pobj.innerHTML="Result:"+ (parseInt(FirstNumber)+parseInt(SecondNumber));
+            }
+            else if(v=="b2"){
+                if(a>b)
+                 pobj.innerHTML=(a-b);
+                else
+                 pobj.innerHTML=(a-b);
+
+            }
+            else if(v=="b3"){
+                pobj.innerHTML="Result:"+ (a*b);
+            }
+            else{
+                pobj.innerHTML="Result:"+ a/b;
+            }
+
+
+	 }
+</script>
+</body>
+</html>
+
