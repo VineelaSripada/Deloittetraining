@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebApplication6.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>List of Products</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.pName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.pName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quantity)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.pId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.pId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.pId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
