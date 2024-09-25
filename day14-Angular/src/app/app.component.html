@@ -1,0 +1,36 @@
+<h3>Communicating with ASP.NET Core Web APIs using HttpClient in Angular</h3>
+<hr/>
+
+
+
+<input [(ngModel)]="name" placeholder="Name" />
+<input [(ngModel)]="course" placeholder="Course" />
+<input [(ngModel)]="email" placeholder="Email" />
+<br/>  <hr/>
+
+<input type="button" value="Get Students" (click)="getDataButtonClick()"  />
+<input type="button"  value="Add Student"   (click)="addButtonClick()"   />
+<input type="button"  value="Update Student"   (click)="updateButtonClick()"   />
+<br><br>
+
+
+<table border="2" align="center"  width="600" cellpadding="5"  cellspacing="0">
+    <tr>
+      <th>Student Id</th>
+      <th>Student Name</th>
+      <th>Course Name</th>
+      <th>E-mail Id</th>     
+      <th></th>
+    </tr>
+  
+    <tr  *ngFor="let item of studentsArray">
+      <td>{{item.studentId  }}</td>
+      <td>{{item.name  }}</td>
+      <td>{{item.course }}</td>
+      <td>{{item.email }}</td>
+      <td>
+        <a href="javascript:void(0);" (click)="selectClick(item.studentId)">Select</a> |
+        <a href="javascript:void(0);" (click)="deleteClick(item.studentId)">Delete</a>
+      </td>
+    </tr>  
+  </table>
